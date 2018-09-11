@@ -29,8 +29,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="179dp"
-        android:layout_height="90dp"
+        android:layout_width="204dp"
+        android:layout_height="85dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -119,7 +119,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView_Ac" />
 
     <RadioGroup
-        android:layout_width="148dp"
+        android:layout_width="129dp"
         android:layout_height="82dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -130,10 +130,10 @@
         android:layout_weight="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.036"
+        app:layout_constraintHorizontal_bias="0.213"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.617">
+        app:layout_constraintVertical_bias="0.593">
 
         <RadioButton
             android:id="@+id/radioButton4_Addition"
@@ -169,10 +169,10 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.877"
+        app:layout_constraintHorizontal_bias="0.795"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.621">
+        app:layout_constraintVertical_bias="0.597">
 
         <RadioButton
             android:id="@+id/radioButton4_Division"
@@ -215,8 +215,8 @@
         app:srcCompat="@drawable/num" />
 
     <LinearLayout
-        android:layout_width="164dp"
-        android:layout_height="75dp"
+        android:layout_width="194dp"
+        android:layout_height="84dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"

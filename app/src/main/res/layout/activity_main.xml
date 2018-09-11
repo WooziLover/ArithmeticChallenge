@@ -107,6 +107,7 @@
         android:id="@+id/button6_Instructions"
         android:layout_width="246dp"
         android:layout_height="44dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -114,9 +115,11 @@
         android:layout_marginTop="164dp"
         android:text="Instructions"
         android:textColor="@android:color/holo_purple"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView_Ac" />
+        app:layout_constraintTop_toTopOf="@+id/textView_Ac"
+        app:layout_constraintVertical_bias="0.0" />
 
     <RadioGroup
         android:layout_width="129dp"

@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ImageButton;
+import android.widget.RadioButton;
 import android.widget.Button;
 import android.content.Intent;
 
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void listenForUserInput(){
         // sets asset ids for use in setOnClickListener
-        final ImageButton[] operation = {
+        final RadioButton[] operation = {
                 findViewById(R.id.radioButton4_Addition),
                 findViewById(R.id.radioButton3_Subtraction),
                 findViewById(R.id.radioButton3_Multiplication),

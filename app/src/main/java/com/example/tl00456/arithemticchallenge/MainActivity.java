@@ -28,12 +28,12 @@ public class MainActivity extends AppCompatActivity {
     private void listenForUserInput(){
         // sets asset ids for use in setOnClickListener
         final RadioButton[] operation = {
-                findViewById(R.id.radioButton4_Addition),
-                findViewById(R.id.radioButton3_Subtraction),
-                findViewById(R.id.radioButton3_Multiplication),
-                findViewById(R.id.radioButton4_Division)};
-        final Button instructionButton = findViewById(R.id.button6_Instructions);
-        final Button exitButton = findViewById(R.id.button5_Exit);
+                findViewById(R.id.radioButton_Addition),
+                findViewById(R.id.radioButton_Subtraction),
+                findViewById(R.id.radioButton_Multiplication),
+                findViewById(R.id.radioButton_Division)};
+        final Button instructionButton = findViewById(R.id.button_Instructions);
+        final Button exitButton = findViewById(R.id.button_Exit);
 
         // sets operation strings for use in intent put
         final String operationName[] = {"addition", "subtraction", "multiplication", "division"};

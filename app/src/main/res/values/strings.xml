@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">ArithemticChallenge</string>
+    <string name="num_1">Num 1</string>
+    <string name="sign">Sign</string>
+    <string name="num_2">Num 2</string>
+    <string name="option_1">Option 1</string>
+    <string name="option_2">Option 2</string>
+    <string name="option_3">Option 3</string>
+    <string name="your_score">Your Score:</string>
+    <string name="high_score">High Score:</string>
+    <string name="back_to_menu">Back To Menu</string>
+    <string name="arithmetic_challenge">Arithmetic Challenge</string>
+    <string name="play">Play?</string>
+    <string name="subtraction">Subtraction</string>
+    <string name="exit">Exit?</string>
+    <string name="instructions">Instructions</string>
+    <string name="addition">Addition</string>
+    <string name="multiplication">Multiplication</string>
+    <string name="division">Division</string>
+    <string name="multiplication_symbol">multiplication symbol</string>
+    <string name="addition_symbol">addition symbol</string>
+    <string name="division_symbol">division_symbol</string>
+    <string name="subtraction_symbol">subtraction symbol</string>
+    <string name="colorful_picture">colorful picture</string>
 </resources>

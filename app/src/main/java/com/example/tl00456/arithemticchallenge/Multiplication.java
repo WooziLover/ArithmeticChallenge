@@ -12,15 +12,15 @@ public class Multiplication extends ArithmeticChallenge {
 
     protected String createQuestion() {
         operator = "X";
-        System.out.println(firstnum + operator + secondnum);
-        return createQuestion();
+        String question = firstnum + operator + secondnum;
+        return question;
     }
 
     protected int[] createChoices() {
         int a, b, c;
-        a = firstnum * secondnum;
-        b = firstnum - (int) (3 * Math.random());
-        c = firstnum + (int) (3 * Math.random());
+        a = firstnum * secondnum ;
+        b = a - (int)(2 * Math.random());
+        c = a + (int)(2 * Math.random());
         int[] result = {a, b, c};
         int[] result_one = {b, c, a};
         int[] result_two = {c, a, b};

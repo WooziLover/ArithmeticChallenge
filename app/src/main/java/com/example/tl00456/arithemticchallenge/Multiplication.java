@@ -17,15 +17,20 @@ public class Multiplication extends ArithmeticChallenge {
     }
 
     protected int[] createChoices(){
-        int choice = (int)(3 * Math.random());
-        switch(choice){
-            case 0: firstnum *= secondnum;
+        int a, b, c;
+        a = firstnum * secondnum;
+        b = firstnum - (int)(5 * Math.random());
+        c = firstnum + (int)(5 * Math.random());
+        int[] result= {a, b, c};
+        /*int randomChoice = (int)(3 * Math.random());
+        switch(randomChoice){
+            case 0: result = [a, b, c];
             break;
-            case 1: firstnum += secondnum;
+            case 1: result = [b, a c];
             break;
-            case 2: firstnum -= secondnum;
+            case 2: result = [c, a, b];
             break;
-        }
+        }*/
         return createChoices();
     }
 }

@@ -36,24 +36,15 @@ public class Multiplication extends ArithmeticChallenge {
 
     protected int[] createChoices() {
         int a, b, c;
-        a = firstnum * secondnum ;
-        b = a * (int)(3 * Math.random() + 1);
-        c = a * (int)(3 * Math.random() + 1);
-        if((a == b) || (a == c) || (b == a) || (b == c) || (c == a) || (c == b))
-        {
+        a = firstnum * secondnum;
+        b = a * (int) (3 * Math.random() + 1);
+        c = a * (int) (3 * Math.random() + 1);
+        if ((a == b) || (a == c) || (b == a) || (b == c) || (c == a) || (c == b))
             b = a * 2;
-            c = a / 2;
-        }
+        c = a / 2;
+
         int[] result = {a, b, c};
-        int[] result_one = {b, c, a};
-        int[] result_two = {c, a, b};
-        int randomChoice = (int) (3 * Math.random());
-        switch (randomChoice) {
-            case 0: return result;
-            case 1: return result_one;
-            case 2: return result_two;
-        }
-        return createChoices();
+        return result;
     }
 }
 

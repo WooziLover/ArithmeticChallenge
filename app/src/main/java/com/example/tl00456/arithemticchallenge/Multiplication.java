@@ -22,7 +22,8 @@ package com.example.tl00456.arithemticchallenge;
 public class Multiplication extends ArithmeticChallenge {
     int firstnum, secondnum;
 
-    public Multiplication() {
+    public Multiplication(int TOTAL_LEVELS, int TURNS_PER_LEVEL){
+        super(TOTAL_LEVELS, TURNS_PER_LEVEL);
 
     }
 
@@ -35,13 +36,19 @@ public class Multiplication extends ArithmeticChallenge {
     }
 
     protected int[] createChoices() {
+       /*int a, b, c;
+       a = firstnum * secondnum;
+       do{
+           b = a * (int)(3 * Math.random() + 1);
+       }
+       while()*/
         int a, b, c;
         a = firstnum * secondnum;
         b = a * (int) (3 * Math.random() + 1);
         c = a * (int) (3 * Math.random() + 1);
         if ((a == b) || (a == c) || (b == a) || (b == c) || (c == a) || (c == b))
             b = a * 2;
-        c = a / 2;
+            c = a / 2;
 
         int[] result = {a, b, c};
         return result;

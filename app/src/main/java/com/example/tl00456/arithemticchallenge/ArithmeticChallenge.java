@@ -4,8 +4,11 @@ package com.example.tl00456.arithemticchallenge;
 
 public abstract class ArithmeticChallenge {
     // fields initialized here
-    String question;
-    int[] createChoices;
+
+    public long mStartTime;
+    private int mChoice[];
+    private String mQuestionText;
+
 
     public ArithmeticChallenge(int TOTAL_LEVELS, int TURNS_PER_LEVEL) {
         // to be implemented
@@ -29,18 +32,17 @@ public abstract class ArithmeticChallenge {
         mStartTime = System.currentTimeMillis();
     }
 
-    protected int getChoice(int index) {
-        //something that connects method together
-        return index;
-    }
+    protected String getChoice(int index) {
+        return Integer.toString(mChoice[index]);
+        }
+
 
     protected void setQuestionText(String question) {
-
-        this.question = createQuestion();
+         mQuestionText = createQuestion();
     }
 
     protected String getQuestionText() {
-        return question;
+        return mQuestionText;
     }
 
 
@@ -57,9 +59,23 @@ public abstract class ArithmeticChallenge {
 
 
     private void shuffleChoices(int[] choices) {
-      //if()
+        int[] older = new int[3];
+        for(int i = 0; i < 3; i++) {
+            older[i] = choices[i];
+        }
+        int randomorder = (int)(3 * Math.random());
+
+        switch (randomorder){
+            case 0: choices[0] = choices[1];
+                    choices[1] = choices[2];
+                    choices[2] = choices[0];
+            break;
+            case 1:
+            break;
+            case 2:
+            break;
+        }
+
     }
-
-
 }
 

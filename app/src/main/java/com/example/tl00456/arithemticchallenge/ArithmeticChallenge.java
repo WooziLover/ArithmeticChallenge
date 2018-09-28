@@ -5,6 +5,7 @@ package com.example.tl00456.arithemticchallenge;
 public abstract class ArithmeticChallenge {
     // fields initialized here
     String question;
+    int[] createChoices;
 
     public ArithmeticChallenge(int TOTAL_LEVELS, int TURNS_PER_LEVEL) {
         // to be implemented
@@ -28,17 +29,21 @@ public abstract class ArithmeticChallenge {
         mStartTime = System.currentTimeMillis();
     }
 
-    protected void setQuestionText() {
-        question = createQuestion();
+    protected int getChoice(int index) {
+        //something that connects method together
+        return index;
+    }
+
+    protected void setQuestionText(String question) {
+
+        this.question = createQuestion();
     }
 
     protected String getQuestionText() {
         return question;
     }
 
-    protected int getChoice(int index) {
-        return index;
-    }
+
     // other getters and setters declared and implemented here
 
     /******************************************************
@@ -52,7 +57,7 @@ public abstract class ArithmeticChallenge {
 
 
     private void shuffleChoices(int[] choices) {
-      //  for
+      //if()
     }
 
 

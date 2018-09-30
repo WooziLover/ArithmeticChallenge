@@ -11,9 +11,11 @@ public class Subtraction extends ArithmeticChallenge {
 
     protected String createQuestion(){
         // to be implemented
+        return null;
     }
 
     protected int[] createChoices(){
 // to be implemented
+        return new int[0];
     }
 }

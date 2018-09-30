@@ -63,16 +63,36 @@ public abstract class ArithmeticChallenge {
         for(int i = 0; i < 3; i++) {
             older[i] = choices[i];
         }
-        int randomorder = (int)(3 * Math.random());
+        int randomorder = (int)(7 * Math.random());
 
         switch (randomorder){
             case 0: choices[0] = choices[1];
                     choices[1] = choices[2];
                     choices[2] = choices[0];
             break;
-            case 1:
+            case 1: choices[0] = choices[2];
+                    choices[1] = choices[0];
+                    choices[2] = choices[1];
             break;
-            case 2:
+            case 2: choices[1] = choices[2];
+                    choices[2] = choices[0];
+                    choices[0] = choices[1];
+            break;
+            case 3: choices[1] = choices[0];
+                    choices[2] = choices[1];
+                    choices[0] = choices[2];
+            break;
+            case 4: choices[2] = choices[0];
+                    choices[0] = choices[1];
+                    choices[1] = choices[2];
+            break;
+            case 5: choices[2] = choices[1];
+                    choices[0] = choices[2];
+                    choices[1] = choices[0];
+            break;
+            case 6: choices[0] = choices[0];
+                    choices[1] = choices[1];
+                    choices[2] = choices[2];
             break;
         }
 

@@ -6,8 +6,8 @@ public abstract class ArithmeticChallenge {
     // fields initialized here
 
     public long mStartTime;
-    private int mChoice[];
-    private String mQuestionText;
+    int mChoice[] = new int[3];
+    String mQuestionText;
 
 
     public ArithmeticChallenge(int TOTAL_LEVELS, int TURNS_PER_LEVEL) {
@@ -29,6 +29,7 @@ public abstract class ArithmeticChallenge {
     protected void setChoices(int[] choices) {
         // set unshuffled choices here
         shuffleChoices(choices);
+        mChoice = choices;
         mStartTime = System.currentTimeMillis();
     }
 
@@ -38,7 +39,7 @@ public abstract class ArithmeticChallenge {
 
 
     protected void setQuestionText(String question) {
-         mQuestionText = createQuestion();
+         mQuestionText = question;
     }
 
     protected String getQuestionText() {
@@ -58,41 +59,41 @@ public abstract class ArithmeticChallenge {
     }
 
 
-    private void shuffleChoices(int[] choices) {
+    private void shuffleChoices(int[] mChoice) {
         int[] older = new int[3];
-        for(int i = 0; i < 3; i++) {
-            older[i] = choices[i];
+       for(int i = 0; i < 2; i++) {
+            older[i] = mChoice[i];
         }
         int randomorder = (int)(7 * Math.random());
 
         switch (randomorder){
-            case 0: choices[0] = choices[1];
-                    choices[1] = choices[2];
-                    choices[2] = choices[0];
+            case 0: mChoice[0] = older[1];
+                    mChoice[1] = older[2];
+                    mChoice[2] = older[0];
             break;
-            case 1: choices[0] = choices[2];
-                    choices[1] = choices[0];
-                    choices[2] = choices[1];
+            case 1: mChoice[0] = older[2];
+                    mChoice[1] = older[0];
+                    mChoice[2] = older[1];
             break;
-            case 2: choices[1] = choices[2];
-                    choices[2] = choices[0];
-                    choices[0] = choices[1];
+            case 2: mChoice[1] = older[2];
+                    mChoice[2] = older[0];
+                    mChoice[0] = older[1];
             break;
-            case 3: choices[1] = choices[0];
-                    choices[2] = choices[1];
-                    choices[0] = choices[2];
+            case 3: mChoice[1] = older[0];
+                    mChoice[2] = older[1];
+                    mChoice[0] = older[2];
             break;
-            case 4: choices[2] = choices[0];
-                    choices[0] = choices[1];
-                    choices[1] = choices[2];
+            case 4: mChoice[2] = older[0];
+                    mChoice[0] = older[1];
+                    mChoice[1] = older[2];
             break;
-            case 5: choices[2] = choices[1];
-                    choices[0] = choices[2];
-                    choices[1] = choices[0];
+            case 5: mChoice[2] = older[1];
+                    mChoice[0] = older[2];
+                    mChoice[1] = older[0];
             break;
-            case 6: choices[0] = choices[0];
-                    choices[1] = choices[1];
-                    choices[2] = choices[2];
+            case 6: mChoice[0] = older[0];
+                    mChoice[1] = older[1];
+                    mChoice[2] = older[2];
             break;
         }
 

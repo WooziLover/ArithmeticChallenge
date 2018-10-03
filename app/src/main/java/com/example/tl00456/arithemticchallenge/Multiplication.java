@@ -21,7 +21,6 @@ package com.example.tl00456.arithemticchallenge;
  ************************************************/
 public class Multiplication extends ArithmeticChallenge {
     int firstnum, secondnum;
-
     public Multiplication(int TOTAL_LEVELS, int TURNS_PER_LEVEL){
         super(TOTAL_LEVELS, TURNS_PER_LEVEL);
 

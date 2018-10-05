@@ -8,6 +8,10 @@ public abstract class ArithmeticChallenge {
     public long mStartTime;
     int mChoice[] = new int[3];
     String mQuestionText;
+    int mScoreText = 0;
+    int mProgressBar;
+    private long mEndTime;
+
 
 
     public ArithmeticChallenge(int TOTAL_LEVELS, int TURNS_PER_LEVEL) {
@@ -46,21 +50,48 @@ public abstract class ArithmeticChallenge {
         return mQuestionText;
     }
 
+    protected void setScore(boolean isCorrect) {
+        if(isCorrect){
+            long mEndTime = System.currentTimeMillis();
+            long mStartTime = System.currentTimeMillis();
+            int time = (int) (mStartTime - mEndTime) / 1000 % 60;
+            //if(!(time <= 100)) {
+              //  mScoreText = mScoreText;
+            //}
+            mScoreText = mScoreText + 5;
+        }
+    }
 
-    // other getters and setters declared and implemented here
+    protected int getScore(){
+        return mScoreText;
+    }
+
+    protected void setProgress(){
+        mProgressBar++;
+
+    }
+
+    protected int getProgress(){
+      return mProgressBar;
+    }
+   // other getters and setters declared and implemented here
 
     /******************************************************
      * Concrete Classes
      ******************************************************/
 
     protected boolean isCorrect(int choice) {
-        // to be implemented
-        return true;
+       //if(choice == mAnswer){
+           return true;
+
+       //}
+        //return false;
     }
 
 
     private void shuffleChoices(int[] mChoice) {
         int[] older = new int[3];
+        int mAnswer = mChoice[0];
        for(int i = 0; i < 2; i++) {
             older[i] = mChoice[i];
         }

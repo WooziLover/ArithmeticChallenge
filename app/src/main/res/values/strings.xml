@@ -23,4 +23,8 @@
     <string name="subtraction_symbol">subtraction symbol</string>
     <string name="colorful_picture">colorful picture</string>
     <string name="number_1_sign_number_2">Number 1- Sign-Number 2</string>
+    <string name="correct_toast"></string>
+    <string name="incorrect_toast"></string>
+    <string name="win_text"></string>
+    <string name="next_button"></string>
 </resources>

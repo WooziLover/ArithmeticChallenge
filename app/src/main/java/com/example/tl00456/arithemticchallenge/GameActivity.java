@@ -120,14 +120,31 @@ public class GameActivity extends AppCompatActivity {
         mMenu.setText(R.string.next_button);
     }
 
+    /************************************************************************
+     * Gets the high score from the Android device, sets it in the Model,
+     * and then displays it in the View.
+     ************************************************************************/
     protected void retrieveHighScore(String operation) {
-        // to be implemented
-
+        prefs = getSharedPreferences(operation, MODE_PRIVATE);
+        game.setHighScore(prefs.getInt("High Score", 0));
+        String highScoreText = "High Score: " + game.getHighScore();
+        mHighScoreText.setText(highScoreText);
+        String toast = "Current High Score: " + game.getHighScore();
+        Toast.makeText(this, toast, Toast.LENGTH_LONG).show();
     }
 
+    /************************************************************************
+     * If current score exceeds high school, updates high score in Android
+     * device and displays it to View.
+     ************************************************************************/
     protected void updateHighScore() {
-        // to be implemented
-
+        editor = prefs.edit();
+        if (game.getScore() > game.getHighScore()) {
+            String highScoreText = "High Score: " + game.getScore();
+            mHighScoreText.setText(highScoreText);
+            editor.putInt("High Score", game.getScore());
+            editor.apply();
+        }
     }
 }
 

@@ -9,7 +9,7 @@ public abstract class ArithmeticChallenge {
     int mChoice[] = new int[3];
     String mQuestionText;
     int mScoreText = 0;
-    int mProgressBar;
+    int mProgressBar, mHighScoreText;
     int mAnswer = mChoice[0];
 
 
@@ -50,10 +50,12 @@ public abstract class ArithmeticChallenge {
     }
 
     protected void setScore(boolean isCorrect) {
+        long mEndTime = System.currentTimeMillis();
         if (isCorrect) {
-            long mEndTime = System.currentTimeMillis();
             int time = (int) (mStartTime - mEndTime) / 1000;
-            mScoreText = mScoreText + 5;
+            mScoreText += 1;
+        }else{
+            mScoreText -= 1;
         }
     }
 
@@ -68,6 +70,14 @@ public abstract class ArithmeticChallenge {
 
     protected int getProgress() {
         return mProgressBar;
+    }
+
+    protected void setHighScore(int highScore){
+        mHighScoreText = highScore;
+    }
+
+    protected int getHighScore(){
+        return mHighScoreText;
     }
     // other getters and setters declared and implemented here
 

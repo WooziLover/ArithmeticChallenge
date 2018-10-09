@@ -4,9 +4,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.RadioButton;
+import android.widget.ImageButton;
 import android.widget.Button;
 import android.content.Intent;
+import android.widget.RadioButton;
 
 /***********************************************************************
  * Description: This is the controller of the main activity to react

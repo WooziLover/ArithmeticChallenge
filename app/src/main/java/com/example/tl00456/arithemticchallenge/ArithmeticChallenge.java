@@ -10,8 +10,7 @@ public abstract class ArithmeticChallenge {
     String mQuestionText;
     int mScoreText = 0;
     int mProgressBar;
-    private long mEndTime;
-
+    int mAnswer = mChoice[0];
 
 
     public ArithmeticChallenge(int TOTAL_LEVELS, int TURNS_PER_LEVEL) {
@@ -39,11 +38,11 @@ public abstract class ArithmeticChallenge {
 
     protected String getChoice(int index) {
         return Integer.toString(mChoice[index]);
-        }
+    }
 
 
     protected void setQuestionText(String question) {
-         mQuestionText = question;
+        mQuestionText = question;
     }
 
     protected String getQuestionText() {
@@ -51,83 +50,81 @@ public abstract class ArithmeticChallenge {
     }
 
     protected void setScore(boolean isCorrect) {
-        if(isCorrect){
+        if (isCorrect) {
             long mEndTime = System.currentTimeMillis();
-            long mStartTime = System.currentTimeMillis();
-            int time = (int) (mStartTime - mEndTime) / 1000 % 60;
-            //if(!(time <= 100)) {
-              //  mScoreText = mScoreText;
-            //}
+            int time = (int) (mStartTime - mEndTime) / 1000;
             mScoreText = mScoreText + 5;
         }
     }
 
-    protected int getScore(){
+    protected int getScore() {
         return mScoreText;
     }
 
-    protected void setProgress(){
+    protected void setProgress() {
         mProgressBar++;
 
     }
 
-    protected int getProgress(){
-      return mProgressBar;
+    protected int getProgress() {
+        return mProgressBar;
     }
-   // other getters and setters declared and implemented here
+    // other getters and setters declared and implemented here
 
     /******************************************************
      * Concrete Classes
      ******************************************************/
 
     protected boolean isCorrect(int choice) {
-       //if(choice == mAnswer){
-           return true;
-
-       //}
-        //return false;
+        if (mChoice[choice] == mAnswer) {
+            return true;
+            }
+        return false;
     }
 
 
-    private void shuffleChoices(int[] mChoice) {
-        int[] older = new int[3];
-        int mAnswer = mChoice[0];
-       for(int i = 0; i < 2; i++) {
-            older[i] = mChoice[i];
-        }
-        int randomorder = (int)(7 * Math.random());
+        private void shuffleChoices (int[] mChoice){
+            int[] older = new int[3];
+            for (int i = 0; i < 2; i++) {
+                older[i] = mChoice[i];
+            }
+            int randomorder = (int) (6 * Math.random());
 
-        switch (randomorder){
-            case 0: mChoice[0] = older[1];
-                    mChoice[1] = older[2];
-                    mChoice[2] = older[0];
-            break;
-            case 1: mChoice[0] = older[2];
-                    mChoice[1] = older[0];
-                    mChoice[2] = older[1];
-            break;
-            case 2: mChoice[1] = older[2];
-                    mChoice[2] = older[0];
-                    mChoice[0] = older[1];
-            break;
-            case 3: mChoice[1] = older[0];
-                    mChoice[2] = older[1];
-                    mChoice[0] = older[2];
-            break;
-            case 4: mChoice[2] = older[0];
+            switch (randomorder) {
+                case 0:
                     mChoice[0] = older[1];
                     mChoice[1] = older[2];
-            break;
-            case 5: mChoice[2] = older[1];
+                    mChoice[2] = older[0];
+                    break;
+                case 1:
                     mChoice[0] = older[2];
                     mChoice[1] = older[0];
-            break;
-            case 6: mChoice[0] = older[0];
-                    mChoice[1] = older[1];
-                    mChoice[2] = older[2];
-            break;
-        }
+                    mChoice[2] = older[1];
+                    break;
+                case 2:
+                    mChoice[1] = older[2];
+                    mChoice[2] = older[0];
+                    mChoice[0] = older[1];
+                    break;
+                case 3:
+                    mChoice[1] = older[0];
+                    mChoice[2] = older[1];
+                    mChoice[0] = older[2];
+                    break;
+                case 4:
+                    mChoice[2] = older[0];
+                    mChoice[0] = older[1];
+                    mChoice[1] = older[2];
+                    break;
+                case 5:
+                    mChoice[2] = older[1];
+                    mChoice[0] = older[2];
+                    mChoice[1] = older[0];
+                    break;
 
+            }
+
+        }
     }
-}
+
 

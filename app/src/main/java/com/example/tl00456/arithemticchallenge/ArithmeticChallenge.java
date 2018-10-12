@@ -10,8 +10,7 @@ public abstract class ArithmeticChallenge {
     String mQuestionText;
     int mScoreText = 0;
     int mProgressBar, mHighScoreText;
-    int mAnswer = mChoice[0];
-
+    int mAnswer;
 
     public ArithmeticChallenge(int TOTAL_LEVELS, int TURNS_PER_LEVEL) {
         // to be implemented
@@ -30,7 +29,7 @@ public abstract class ArithmeticChallenge {
      ******************************************************/
 
     protected void setChoices(int[] choices) {
-        // set unshuffled choices here
+        mAnswer = choices[0];
         shuffleChoices(choices);
         mChoice = choices;
         mStartTime = System.currentTimeMillis();
@@ -52,7 +51,7 @@ public abstract class ArithmeticChallenge {
     protected void setScore(boolean isCorrect) {
         long mEndTime = System.currentTimeMillis();
         if (isCorrect) {
-            int time = (int) (mStartTime - mEndTime) / 1000;
+           //int time = (int) (mStartTime - mEndTime) / 1000;
             mScoreText += 1;
         }else{
             mScoreText -= 1;
@@ -86,16 +85,13 @@ public abstract class ArithmeticChallenge {
      ******************************************************/
 
     protected boolean isCorrect(int choice) {
-        if (mChoice[choice] == mAnswer) {
-            return true;
-            }
-        return false;
+        return (mAnswer == mChoice[choice]);
     }
 
 
         private void shuffleChoices (int[] mChoice){
             int[] older = new int[3];
-            for (int i = 0; i < 2; i++) {
+            for (int i = 0; i < 3; i++) {
                 older[i] = mChoice[i];
             }
             int randomorder = (int) (6 * Math.random());
